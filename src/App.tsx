@@ -1,12 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button, { ButtonSize, ButtonType } from './components/Button/button';
+import Alert, { AlertType } from './components/Alert/alert';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Alert title="This is a success" type={AlertType.Success}/>
+        <Alert title="This is a success" type={AlertType.Danger}/>
+        <Alert title="This is a success" description="This is a long description"/>
+        <Alert title="This is a success" type={AlertType.Warning}/>
+        <Button>Hello</Button>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>

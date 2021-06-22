@@ -1,0 +1,37 @@
+.alert {
+  position: relative;
+  width: 420px;
+  padding: $alert-padding-y $alert-padding-x;
+  margin-bottom: $alert-margin-bottom;
+  border: $alert-border;
+  border-radius: $alert-border-radius;
+}
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0.75rem 1.25rem;
+  color: inherit;
+  cursor: pointer
+}
+.title {
+  font-weight: 700;
+  color: $white;
+}
+.description {
+  font-size: 0.875rem;
+  margin: 0.3rem 0 0;
+  color: $white;
+}
+.alert-success {
+  @include alert-style($success, darken($success, 4.9%), $white)
+}
+.alert-danger {
+  @include alert-style($danger, darken($success, 4.9%), $white)
+}
+.alert-warning {
+  @include alert-style($warning, darken($warning, 4.9%), $white)
+}
+.alert-default {
+  @include alert-style($primary, darken($primary, 4.9%), $white)
+}
