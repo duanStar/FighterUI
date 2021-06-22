@@ -5,7 +5,7 @@ export enum AlertType {
   Success = 'success',
   Default = 'default',
   Warning = 'warning',
-  Danger = 'danger'
+  Danger = 'danger',
 }
 
 interface BaseAlertProps {
