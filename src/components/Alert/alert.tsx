@@ -29,7 +29,7 @@ const Alert: React.FC<AlertProps> = (props) => {
   return (
     show ? <div className={classes} {...restProps}>
     <div className="title">{title}</div>
-    <p className="description">{description}</p>
+    {description ? <p className="description">{description}</p> : ''}
     {closable ? <div className="close" onClick={() => {
       setShow(false);
       onClose && onClose();
