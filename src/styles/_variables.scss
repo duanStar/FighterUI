@@ -239,6 +239,15 @@ $menu-item-disabled-color:     $gray-600 !default;
 //submenu
 $submenu-box-shadow: 0 2px 4px 0 rgba(0,0,0,.12), 0 0 6px 0 rgba(0,0,0,.04);
 
+// tabs
+$tab-border-width:         1px !default;
+$tab-border-color:         $gray-300 !default;
+$tab-item-active-border-width:    2px !default;
+$tab-item-active-color:    $primary !default;
+$tab-item-padding-y:       .5rem !default;
+$tab-item-padding-x:       1rem !default;
+$tab-card-border-radius:   .25rem !default;
+
 //input
 $input-padding-y:                       $btn-padding-y !default;
 $input-padding-x:                       $btn-padding-x !default;

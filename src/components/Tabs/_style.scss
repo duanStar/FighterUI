@@ -1,0 +1,41 @@
+.viking-tabs-nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+  border-bottom: $tab-border-width solid $tab-border-color;
+}
+.viking-tabs-nav-item {
+  display: block;
+  padding: $tab-item-padding-y $tab-item-padding-x;
+  cursor: pointer;
+  &.is-active {
+    border-bottom: $tab-item-active-border-width solid $tab-item-active-color;
+    color: $tab-item-active-color;
+  }
+  &.disabled {
+    color: $gray-600;
+    pointer-events: none;
+    cursor: default;
+    background-color: transparent;
+    border-color: transparent;
+  }
+}
+
+.viking-tabs-content {
+  margin-top: 1rem;
+}
+
+.nav-card {
+  .viking-tabs-nav-item {
+    border: $tab-border-width solid $white;
+    margin-bottom: -2px;
+  }
+  .viking-tabs-nav-item.is-active {
+    border-top-left-radius: $tab-card-border-radius;
+    border-top-right-radius: $tab-card-border-radius;
+    background-color: $white;
+    border-color: $gray-300 $gray-300 $white;
+  }
+}
