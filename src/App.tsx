@@ -1,6 +1,6 @@
 import React from 'react';
-import Button, { ButtonSize, ButtonType } from './components/Button/button';
-import Alert, { AlertType } from './components/Alert/alert';
+import Button from './components/Button/button';
+import Alert from './components/Alert/alert';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
@@ -9,11 +9,11 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Alert title="This is a success" type={AlertType.Success}/>
-        <Alert title="This is a success" type={AlertType.Danger}/>
+        <Alert title="This is a success" type='success'/>
+        <Alert title="This is a success" type='danger'/>
         <Alert title="This is a success" description="This is a long description"/>
-        <Alert title="This is a success" type={AlertType.Warning}/>
-        <Button size={ButtonSize.Large} btnType={ButtonType.Primary} >Hello</Button>
+        <Alert title="This is a success" type='warning' />
+        <Button size={'lg'} btnType={'primary'} >Hello</Button>
         <Menu defaultIndex={'0'} defaultOpenSubMenus={['2']}>
           <MenuItem>
             cool link

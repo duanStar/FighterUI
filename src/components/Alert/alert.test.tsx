@@ -1,10 +1,10 @@
 import React from "react";
 import { render , fireEvent} from '@testing-library/react';
-import Alert, { AlertProps, AlertType } from "./alert";
+import Alert, { AlertProps } from "./alert";
 
 const testProps: AlertProps = {
   title: 'Hello',
-  type: AlertType.Default,
+  type: 'default',
   closable: true,
   className: 'kclass'
 }
