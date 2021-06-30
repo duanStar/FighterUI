@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from './components/Button/button';
 import Alert from './components/Alert/alert';
 import Menu from './components/Menu/menu';
@@ -6,16 +6,21 @@ import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
 import Tabs from './components/Tabs/tabs';
 import TabItem from './components/Tabs/tabItem';
-
+import Icon from './components/Icon/Icon';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import Transition from './components/Transition/transition';
+library.add(fas);
 function App() {
+  const [show, setShow] = useState(true);
   return (
     <div className="App">
       <header className="App-header">
+        <Icon icon="coffee" size="10x" theme="danger" />
         <Alert title="This is a success" type='success'/>
         <Alert title="This is a success" type='danger'/>
         <Alert title="This is a success" description="This is a long description"/>
         <Alert title="This is a success" type='warning' />
-        <Button size={'lg'} btnType={'primary'} >Hello</Button>
         <Menu defaultIndex={'0'} defaultOpenSubMenus={['2']}>
           <MenuItem>
             cool link
@@ -88,18 +93,26 @@ function App() {
             this is content three
           </TabItem>
         </Tabs>
+        <Button size={'lg'} btnType={'primary'} onClick={() => {
+          setShow(!show);
+        }} >Toggle</Button>
 
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <Transition animation="zoom-in-left" in={show} timeout={300}>
+            <div>
+              <p>
+                Edit <code>src/App.tsx</code> and save to reload.
+              </p>
+              <p>
+                Edit <code>src/App.tsx</code> and save to reload.
+              </p>
+              <p>
+                Edit <code>src/App.tsx</code> and save to reload.
+              </p>
+              <p>
+                Edit <code>src/App.tsx</code> and save to reload.
+              </p>
+            </div>
+        </Transition>
       </header>
     </div>
   );

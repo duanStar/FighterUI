@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
+import Transition from '../Transition/transition';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import Icon from '../Icon/Icon';
 
 export type AlertType = 'success' | 'default' | 'warning' | 'danger';
 
@@ -22,14 +25,16 @@ const Alert: React.FC<AlertProps> = (props) => {
     [`alert-${type}`]: type
   })
   return (
-    show ? <div className={classes} {...restProps}>
-    <div className="title">{title}</div>
-    {description ? <p className="description">{description}</p> : ''}
-    {closable ? <div className="close" onClick={() => {
-      setShow(false);
-      onClose && onClose();
-    }}>X</div> : ''}
-  </div> : <div></div>
+    <Transition timeout={300} animation="zoom-in-top" in={show}>
+      <div className={classes} {...restProps}>
+        <div className="title">{title}</div>
+        {description ? <p className="description">{description}</p> : ''}
+        {closable ? <div className="close" onClick={() => {
+          setShow(false);
+          onClose && onClose();
+        }}><Icon icon={faTimes} /></div> : ''}
+      </div> 
+    </Transition>
   );
 }
 

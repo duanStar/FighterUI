@@ -7,6 +7,9 @@
 // mixins
 @import 'mixins';
 
+// animations
+@import 'animation';
+
 // Button
 @import '../components/Button/style';
 
@@ -14,7 +17,10 @@
 @import '../components/Alert/style';
 
 // Menu
-@import '../components//Menu/style';
+@import '../components/Menu/style';
 
 // Tabs
-@import '../components//Tabs/style';
+@import '../components/Tabs/style';
+
+// Icon
+@import '../components/Icon/style';

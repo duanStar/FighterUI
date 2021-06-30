@@ -2,7 +2,9 @@ import React, { useContext, useState } from "react";
 import classNames from "classnames";
 import { menuContext } from './menu';
 import { MenuItemProps } from './menuItem';
-import { clearTimeout } from "timers";
+import Icon from "../Icon/Icon";
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import Transition from "../Transition/transition";
 
 export interface SubMenuProps {
   index?: string;
@@ -18,6 +20,8 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
   const [menuOpen, setOpen] = useState(isOpen);
   const classes = classNames('menu-item submenu-item', className, {
     'is-active': context.index === index,
+    'is-opened': menuOpen,
+    'is-vertical': context.mode === 'vertical'
   });
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -54,15 +58,18 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
       }
     });
     return (
-      <ul className={subMenuClasses}>
-        {childrenComponent}
-      </ul>
+      <Transition in={menuOpen} animation="zoom-in-top" timeout={300} appear unmountOnExit >
+        <ul className={subMenuClasses}>
+          {childrenComponent}
+        </ul>
+      </Transition>
     );
   }
   return (
     <li key={index} className={classes} {...hoverEvents}>
       <div className="submenu-title" {...clickEvents}>
         {title}
+        <Icon icon={faAngleDown} className="arrow-icon" />
       </div>
       {renderChildren()}
     </li>
