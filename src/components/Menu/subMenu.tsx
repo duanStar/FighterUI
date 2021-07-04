@@ -2,17 +2,20 @@ import React, { useContext, useState } from "react";
 import classNames from "classnames";
 import { menuContext } from './menu';
 import { MenuItemProps } from './menuItem';
-import Icon from "../Icon/Icon";
+import { Icon } from "../Icon/Icon";
 import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
-import Transition from "../Transition/transition";
+import { Transition } from "../Transition/transition";
 
 export interface SubMenuProps {
+  /**设置 SubMenu 每项索引， 若未指定则自动设置 */
   index?: string;
+  /**设置 SubMenu 每项标题 */
   title?: string;
+  /**可以扩展的 className */
   className?: string;
 }
 
-const SubMenu: React.FC<SubMenuProps> = (props) => {
+export const SubMenu: React.FC<SubMenuProps> = (props) => {
   const { children, index, title, className } = props;
   const context = useContext(menuContext);
   const openedSubmenus = context.defaultOpenSubMenus as Array<string>;
@@ -77,4 +80,3 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
 }
 
 SubMenu.displayName = "SubMenu";
-export default SubMenu;

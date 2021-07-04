@@ -3,12 +3,15 @@ import classNames from "classnames";
 import { tabsContext } from './tabs';
 
 export interface TabItemProps {
+  /**设置 TabItem 选项的文字 */
   label: any;
+  /**设置 TabItem 是否禁用 */
   disabled?: boolean;
+  /**设置 TabItem 的索引，若未指定则自动设置 */
   index?: number;
 }
 
-const TabItem: React.FC<TabItemProps> = (props) => {
+export const TabItem: React.FC<TabItemProps> = (props) => {
   const { label, disabled, children, index } = props;
   const context = useContext(tabsContext);
   useEffect(() => {
@@ -33,4 +36,3 @@ const TabItem: React.FC<TabItemProps> = (props) => {
 }
 
 TabItem.displayName = 'TabItem'
-export default TabItem;

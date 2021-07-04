@@ -10,7 +10,7 @@ export interface TransitionWithAnimationProps {
 }
 
 export type TransitionProps = TransitionWithAnimationProps & CSSTransitionProps;
-const Transition: React.FC<TransitionProps> = (props) => {
+export const Transition: React.FC<TransitionProps> = (props) => {
   const { classNames, animation, children, wrapper, ...restProps } = props;
   return (
     <CSSTransition {...restProps} classNames={ classNames ? classNames : animation}>
@@ -23,5 +23,3 @@ Transition.defaultProps = {
   unmountOnExit: true,
   appear: true
 }
-
-export default Transition;

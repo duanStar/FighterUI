@@ -1,6 +1,6 @@
 import React from "react";
 import { render , fireEvent} from '@testing-library/react';
-import Alert, { AlertProps } from "./alert";
+import { Alert, AlertProps } from "./alert";
 
 const testProps: AlertProps = {
   title: 'Hello',
@@ -22,7 +22,7 @@ describe('test alert component', () => {
   it('should render the correct component based on different props', () => {
     const wrapper = render(<Alert {...testProps} ></Alert>);
     const element = wrapper.baseElement.querySelector('.alert');
-    const closeEle = wrapper.getByText('X');
+    const closeEle = wrapper.container.querySelector('.close') as HTMLElement;
     expect(element).toBeInTheDocument();
     expect(closeEle).toBeInTheDocument();
     expect(element).toHaveClass('alert alert-default kclass');
@@ -37,7 +37,7 @@ describe('test alert component', () => {
   it('should render the correct component with the close event trigger', () => {
     const wrapper = render(<Alert {...closeProps} ></Alert>);
     const element = wrapper.baseElement.querySelector('.alert');
-    const closeEle = wrapper.getByText('X');
+    const closeEle = wrapper.container.querySelector('.close') as HTMLElement;
     expect(element).toBeInTheDocument();
     fireEvent.click(closeEle);
     expect(closeProps.onClose).toHaveBeenCalled();

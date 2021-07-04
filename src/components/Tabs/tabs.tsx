@@ -5,9 +5,13 @@ import { TabItemProps } from './tabItem';
 export type TabsType = 'line' | 'card';
 
 export interface TabsProps {
+  /**当前激活 Tabs 面板的 index，默认为0 */
   defaultIndex?: number;
+  /**可以扩展的 className */
   className?: string;
+  /**点击 TabItem 触发的行为 */
   onSelect?: (selectedIndex: number) => void;
+  /**设置 Tabs 的类型，两种可选，默认为 line */
   type?: TabsType,
 }
 
@@ -19,7 +23,7 @@ interface ITabsContext {
 
 export const tabsContext = createContext<ITabsContext>({ index: 0 });
 
-const Tabs: React.FC<TabsProps> = (props) => {
+export const Tabs: React.FC<TabsProps> = (props) => {
   const { defaultIndex, className, onSelect, type, children } = props;
   const [tabContent, setContent] = useState<any>('');
   const [currentActive, setActive] = useState(defaultIndex);
@@ -69,4 +73,3 @@ Tabs.defaultProps = {
   type: 'line',
   defaultIndex: 0
 }
-export default Tabs;

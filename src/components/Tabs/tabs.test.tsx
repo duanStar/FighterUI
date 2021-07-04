@@ -1,6 +1,6 @@
 import { fireEvent, render, RenderResult } from "@testing-library/react";
-import Tabs, {TabsProps} from "./tabs";
-import TabItem from "./tabItem";
+import {Tabs, TabsProps} from "./tabs";
+import { TabItem } from "./tabItem";
 
 const testLineProps: TabsProps = {
   defaultIndex: 0,

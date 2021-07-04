@@ -6,11 +6,28 @@ export type ThemeProps = 'primary' | 'secondary' | 'success' | 'info' | 'warning
 
 
 export interface IconProps extends FontAwesomeIconProps {
+  /**支持框架主题 根据主题显示不同的颜色 */
   theme?: ThemeProps;
+  /**可以扩展的类名 */
   className?: string;
 }
 
-const Icon: React.FC<IconProps> = (props) => {
+/**
+ * 提供了一套常用的图标集合 基于 react-fontawesome。
+ * 
+ * 支持 react-fontawesome的所有属性 可以在这里查询 https://github.com/FortAwesome/react-fontawesome#basic
+ * 
+ * 支持 fontawesome 所有 free-solid-icons，可以在这里查看所有图标 https://fontawesome.com/icons?d=gallery&s=solid&m=free
+ * 
+ * ### 引用方法
+ * 
+ * 
+ * ~~~js
+ * import { Icon } from 'FighterUI'
+ * ~~~
+ * 
+ */
+export const Icon: React.FC<IconProps> = (props) => {
   const { className, theme, ...restProps } = props;
   const classes = classNames('viking-icon', className, {
     [`icon-${theme}`]: theme
@@ -19,5 +36,3 @@ const Icon: React.FC<IconProps> = (props) => {
     <FontAwesomeIcon {...restProps} className={classes} />
   );
 }
-
-export default Icon;
