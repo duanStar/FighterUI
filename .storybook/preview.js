@@ -8,7 +8,8 @@ import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas);
 
 const wrapperStyle = {
-  padding: '20px 40px'
+  padding: '20px 40px',
+  width: '500px'
 };
 
 const storyWrapper = (storyFn) => (

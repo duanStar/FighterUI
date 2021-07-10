@@ -1,0 +1,127 @@
+.viking-select {
+  position: relative;
+  .viking-input-wrapper {
+    cursor: pointer;
+    display: flex;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    .icon-wrapper {
+      position: absolute;
+      height: 100%;
+      width: 35px;
+      justify-content: center;
+      color: $gray-700;
+      right: 0;
+      top: 0;
+      display: flex;
+      align-items: center;
+      svg {
+        color: $gray-600;
+      }
+    }
+  }
+  input[readonly] {
+    background-color: $white;
+    border-color: $gray-400;
+    cursor: pointer;
+    opacity: 1;
+  }
+  input:disabled {
+    background-color: $gray-200;
+    opacity: 1;
+    cursor: not-allowed;
+  }
+  .icon-wrapper {
+    -webkit-transition: -webkit-transform .25s ease-in-out;
+    transition: -webkit-transform .25s ease-in-out;
+    transition: transform .25s ease-in-out;
+    transition: transform .25s ease-in-out, -webkit-transform .25s ease-in-out;
+    -webkit-transform: rotate(0deg) !important;
+    transform: rotate(0deg) !important;
+  }
+  .viking-select-dropdown {
+    list-style: none;
+    padding-left: 0;
+    white-space: nowrap;
+    position: absolute;
+    background: $white;
+    z-index: 100;
+    top: calc(100% + 8px);
+    left: 0;
+    border: 1px solid $gray-300;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.12), 0 0 6px 0 rgba(0, 0, 0, 0.04);
+    width: 100%;
+    .viking-select-item {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      -webkit-transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+      color: $gray-900;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &.is-disabled {
+        color: $gray-600;
+        pointer-events: none;
+        cursor: default;
+      }
+      &.is-selected {
+        color: $blue;
+        font-weight: 700;
+      }
+      &:hover {
+        background-color: rgba(13, 110, 253, 0.1);
+      }
+    }
+  }
+  .viking-selected-tags {
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    height: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    .viking-tag {
+      height: 80%;
+      padding: 2px 5px;
+      box-sizing: border-box;
+      border: 1px solid rgba(13, 110, 253, 0.2);
+      margin-left: 6px;
+      border-radius: 3px;
+      color: $blue;
+      background-color: rgba(13, 110, 253, 0.1);
+    }
+  }
+}
+.viking-select.menu-is-open .icon-wrapper {
+  -webkit-transform: rotate(180deg) !important;
+  transform: rotate(180deg) !important;
+}
+.viking-input-inner:disabled, .viking-input-inner[readonly] {
+  background-color: $gray-200;
+  opacity: 1;
+}
+.icon-wrapper + .viking-input-inner {
+  padding-right: 35px;
+}
+.viking-input-inner {
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-family: $font-family-sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: $gray-700;
+  background-color: $white;
+  background-clip: padding-box;
+  border: 1px solid $gray-400;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
