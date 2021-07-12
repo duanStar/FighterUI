@@ -71,7 +71,7 @@ export const Select: React.FC<SelectProps> = (props) => {
     if (rootEle.current) {
       containerWidth.current = rootEle.current.getBoundingClientRect().width;
     }
-  }, [visible]);
+  }, [visible, rootEle]);
   const classes = classNames('viking-select', className, {
     'menu-is-open': visible,
     'is-multiple': multiple,

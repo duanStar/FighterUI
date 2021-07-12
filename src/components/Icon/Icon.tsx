@@ -36,3 +36,5 @@ export const Icon: React.FC<IconProps> = (props) => {
     <FontAwesomeIcon {...restProps} className={classes} />
   );
 }
+
+export default Icon;
