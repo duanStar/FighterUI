@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+## FighterUI component library
+## 使用 React+typescript 模仿Ant-Design打造自己的简单组件库
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Build Status](https://travis-ci.com/star2-lab/FighterUI.svg?branch=main)](https://travis-ci.com/star2-lab/FighterUI)
 
-## Available Scripts
 
-In the project directory, you can run:
+### 安装最后已经发布的组件库来试试
 
-### `yarn start`
+~~~javascript
+npm install FighterUI --save
+~~~
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 使用
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+~~~javascript
+// 加载样式
+import 'FighterUI/dist/index.css'
+// 引入组件
+import { Button } from 'FighterUI'
+~~~
 
-### `yarn test`
+### 课程亮点
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* 🔥typescript with React Hooks
+* ⛑️使用 react-testing-library 完成单元测试
+* 📚使用 storybook 本地调试和生成文档页面
+* 📚使用 react-doc-gen 自动生成文档
+* 📦使用第三方库扩充组件-(react-fontawesome, react-transition-group)
+* 🎉涉及全部流程，包括最后的 npm publish，husky提交发布前验证，travis CI/CD 集成，发布文档站点等
 
-### `yarn build`
+### 一些本地开发命令
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+~~~bash
+//启动本地环境
+npm run stroybook
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+//跑单元测试
+npm test
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+//build可发布静态文件
+npm run build
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+//发布到 npm
+npm run publish
+~~~
