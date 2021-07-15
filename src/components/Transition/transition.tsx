@@ -23,3 +23,4 @@ Transition.defaultProps = {
   unmountOnExit: true,
   appear: true
 }
+export default Transition;

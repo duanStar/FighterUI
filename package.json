@@ -1,24 +1,56 @@
 {
-  "name": "vikingship",
+  "name": "fighterui",
   "version": "0.1.0",
-  "private": true,
+  "description": "React Component Library",
+  "author": "Duan Hongfei",
+  "license": "MIT",
+  "private": false,
+  "keywords": [
+    "React",
+    "Component",
+    "UI"
+  ],
+  "homepage": "https://github.com/star2-lab/FighterUI",
+  "repository": {
+    "type": "git",
+    "directory": "https://github.com/star2-lab/FighterUI"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@types/jest": "^26.0.24",
     "axios": "^0.21.1",
     "classnames": "^2.3.1",
-    "react-transition-group": "^4.4.2",
-    "web-vitals": "^1.0.1"
+    "react-transition-group": "^4.4.2"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "npm run clean && npm run build-ts && npm run build-css",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./dist/index.css",
+    "clean": "rimraf ./dist",
+    "prepublishOnly": "npm run test:nowatch && npm run lint && npm run build",
+    "lint": "eslint --ext js,ts,tsx src --max-warnings 10",
+    "test:nowatch": "cross-env CI=true react-scripts test"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:nowatch && npm run lint"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -60,17 +92,22 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "@types/classnames": "^2.3.1",
+    "@types/jest": "^26.0.24",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-transition-group": "^4.4.1",
     "@types/storybook__addon-info": "^5.2.3",
+    "cross-env": "^7.0.3",
+    "husky": "^7.0.1",
     "node-sass": "^6.0.0",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-docgen-typescript-loader": "3.6.0",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "typescript": "^4.1.2"
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1"
   }
 }

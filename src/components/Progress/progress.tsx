@@ -31,3 +31,4 @@ Progress.defaultProps = {
   stokeHeight: 15,
   theme: 'primary'
 }
+export default Progress;

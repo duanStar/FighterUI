@@ -36,3 +36,4 @@ export const Option: React.FC<OptionProps> = (props) => {
 }
 
 Option.displayName = 'Option';
+export default Option;

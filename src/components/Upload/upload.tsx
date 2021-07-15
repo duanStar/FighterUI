@@ -178,3 +178,4 @@ export const Upload: React.FC<UploadProps> = (props) => {
 Upload.defaultProps = {
   name: 'file'
 }
+export default Upload;

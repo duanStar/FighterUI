@@ -73,3 +73,4 @@ Tabs.defaultProps = {
   type: 'line',
   defaultIndex: 0
 }
+export default Tabs;

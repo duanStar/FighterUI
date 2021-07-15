@@ -36,3 +36,4 @@ export const TabItem: React.FC<TabItemProps> = (props) => {
 }
 
 TabItem.displayName = 'TabItem'
+export default TabItem;

@@ -56,3 +56,5 @@ Alert.defaultProps = {
   type: 'default',
   closable: true
 }
+
+export default Alert;

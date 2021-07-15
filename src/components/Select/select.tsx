@@ -156,3 +156,4 @@ Select.defaultProps = {
   name: 'viking-select',
   placeholder: '请选择'
 }
+export default Select;
