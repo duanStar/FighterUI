@@ -1,5 +1,5 @@
 ## FighterUI component library
-## 使用 React+typescript 模仿Ant-Design打造自己的简单组件库
+## 使用 React+typescript 打造自己的简单组件库
 
 [![Build Status](https://travis-ci.com/star2-lab/FighterUI.svg?branch=main)](https://travis-ci.com/star2-lab/FighterUI)
 
